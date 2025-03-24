@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { Check, Trash2, X, Search, BookOpen, Pencil } from 'lucide-react';
 import { useTerms } from '../context/TermContext';
+import { Term } from '../types';
 
 interface TermListProps {
   searchQuery: string;
+  filter: 'understood' | 'notUnderstood';
 }
 
-export function TermList({ searchQuery }: TermListProps) {
+export function TermList({ searchQuery, filter }: TermListProps) {
   const { terms, toggleUnderstood, deleteTerm, updateTerm } = useTerms();
   const [editingId, setEditingId] = useState<string | null>(null);
   const [editTerm, setEditTerm] = useState('');
@@ -43,12 +45,9 @@ export function TermList({ searchQuery }: TermListProps) {
     }
   };
 
-  const filteredTerms = searchQuery
-    ? terms.filter(t => 
-        t.term.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        t.definition.toLowerCase().includes(searchQuery.toLowerCase())
-      )
-    : terms;
+  const filteredTerms = terms.filter(term =>
+    filter === 'understood' ? term.understood : !term.understood
+  );
 
   return (
     <div className="space-y-4">

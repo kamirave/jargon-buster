@@ -8,6 +8,7 @@ import { SearchTerms } from './components/SearchTerms';
 function App() {
   const [activeTab, setActiveTab] = useState<'add' | 'search'>('add');
   const [searchQuery, setSearchQuery] = useState('');
+  const [filter, setFilter] = useState<'understood' | 'notUnderstood'>('understood');
 
   return (
     <TermProvider>
@@ -56,7 +57,21 @@ function App() {
               )}
             </div>
           </div>
-          <TermList searchQuery={searchQuery} />
+          <div className="flex justify-center mt-4">
+            <button
+              className={`px-4 py-2 mx-2 ${filter === 'understood' ? 'bg-blue-500 text-white' : 'bg-gray-300'}`}
+              onClick={() => setFilter('understood')}
+            >
+              Understood
+            </button>
+            <button
+              className={`px-4 py-2 mx-2 ${filter === 'notUnderstood' ? 'bg-blue-500 text-white' : 'bg-gray-300'}`}
+              onClick={() => setFilter('notUnderstood')}
+            >
+              Not Understood
+            </button>
+          </div>
+          <TermList filter={filter} />
         </main>
       </div>
     </TermProvider>
