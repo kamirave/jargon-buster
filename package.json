@@ -7,7 +7,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "start": "npm run build && node server/index.js"
+    "start": "npm run build && node server/index.js",
+    "repomix": "repomix --style markdown"
   },
   "dependencies": {
     "cors": "^2.8.5",

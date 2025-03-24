@@ -26,3 +26,6 @@ dist-ssr
 
 # Server database
 server/terms.db
+
+# Repomix
+repomix*
