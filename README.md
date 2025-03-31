@@ -51,6 +51,11 @@ This repository contains several branches, each with a specific bug for you to f
     ```bash
     git checkout -b challenge/syntax-error upstream/challenge/syntax-error
     ```
+    * **Tip:** To see the exact code changes (the introduced bug) compared to the original `main` branch, you can use `git diff`.
+      *   See all differences: `git diff main...<challenge-name>`
+      *   See differences for a specific file: `git diff main...<challenge-name> -- <path/to/file>` (e.g., `git diff main...challenge/syntax-error -- src/components/AddTermForm.tsx`)
+      *   See differences for a specific folder: `git diff main...<challenge-name> -- <path/to/folder>` (e.g., `git diff main...challenge/server-error-add -- server`)
+
 7.  **Solve the Challenge:** Run `npm install` if needed, then `npm run dev`. Find the bug using the clue in this branch's `README.md` and fix it.
 8.  **Commit Your Solution:** Stage and commit your fix.
     ```bash
