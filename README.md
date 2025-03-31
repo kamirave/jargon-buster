@@ -1,3 +1,38 @@
+## Challenge Clue: Server-Side Error (Add Term)
+
+When you try to add a new term, the operation fails. Check the browser's developer console, specifically the Network tab, to see the request being made to the backend API (`/api/terms`). What status code is the server returning? Also, check the terminal where the backend server (`node server/index.js` part of `npm run dev`) is running for any error messages originating from `server/index.js`.
+
+<details>
+<summary>Learn more about Server-Side Errors</summary>
+
+**Server-Side Errors** occur on the backend system that processes requests from the frontend (client). When the server encounters a problem it cannot handle while processing a request (like interacting with a database or performing business logic), it typically sends an error response back to the client, often with an HTTP status code in the 5xx range (e.g., 500 Internal Server Error).
+
+**Common Causes:**
+- **Database Errors:** Problems connecting to the database, invalid SQL queries (like in this challenge!), constraint violations (e.g., trying to insert duplicate primary keys), or database server issues.
+- **Unhandled Exceptions:** Errors in the server-side code (like TypeErrors, ReferenceErrors, or custom errors) that are not caught and handled gracefully.
+- **Configuration Issues:** Incorrect server configuration, missing environment variables, or wrong file paths.
+- **Resource Unavailability:** The server might depend on external services or files that are temporarily unavailable.
+- **Logic Errors in API Endpoints:** Flawed logic within the specific API route handler being called.
+- **Middleware Errors:** Problems within server middleware functions that process requests before they reach the main route handler.
+
+**How to Find Them:**
+- **Browser Developer Console (Network Tab):** This is crucial for identifying *that* a server error occurred. Look for requests with status codes like 500, 502, 503, etc. Examine the "Response" tab for that request; sometimes the server sends back a specific error message in JSON or HTML format.
+- **Server Logs:** This is where you find the *details* of the error. Check the terminal window where your backend server process is running (`node server/index.js` in this case). Server frameworks like Express often log detailed error messages and stack traces here when an unhandled error occurs. For production systems, errors are usually written to log files.
+- **API Testing Tools:** Tools like Postman or `curl` can be used to send requests directly to the API endpoint, bypassing the frontend, to isolate whether the issue is purely on the server.
+- **Server-Side Debugging:** Using `console.log` statements within the server code or attaching a debugger to the Node.js process.
+
+**Debugging Strategy:**
+1.  **Confirm the Error:** Use the browser's Network tab to confirm a request is failing with a 5xx status code. Check the response body for any clues.
+2.  **Check Server Logs:** Immediately check the terminal output of your running server process for detailed error messages and stack traces. This usually pinpoints the file and line number on the *server* where the error originated.
+3.  **Analyze the Server Code:** Based on the server logs, examine the relevant API route handler (`POST /api/terms` in `server/index.js` for this challenge) and any functions it calls.
+4.  **Isolate the Issue:** If the error involves a database or external service, check the inputs being sent to it (e.g., the SQL query and parameters). Are they correct?
+5.  **Test Directly:** Consider using an API tool like Postman to send the same request directly to the server to rule out frontend issues.
+6.  **Add Logging/Debugging:** If the error isn't obvious, add `console.log` statements in the server code to trace the execution flow and inspect variable values just before the error occurs.
+
+</details>
+
+---
+
 # Jargon Buster
 
 ## Installation
