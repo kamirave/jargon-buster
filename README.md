@@ -2,6 +2,38 @@
 
 The application fails to load in the browser, even though `npm run dev` seems to start without syntax errors. Check the network tab in your browser's developer tools. Is the browser trying to connect to the correct address and port? Review the `vite.config.ts` file for any server configuration issues.
 
+<details>
+<summary>Learn more about Development Environment Errors</summary>
+
+**Development Environment Errors** relate to problems with the setup, configuration, or dependencies of your project, rather than the code logic itself. These often prevent the application from starting correctly or connecting properly.
+
+**Common Causes:**
+- **Incorrect Port Configuration:** The development server (like Vite) is configured to run on a different port than the one you're trying to access in the browser (as in this challenge!).
+- **Missing Dependencies:** Required packages listed in `package.json` haven't been installed (`npm install` or `yarn install` needed).
+- **Incorrect Dependency Versions:** Incompatible versions of libraries are installed, causing conflicts.
+- **Configuration File Errors:** Mistakes in configuration files (e.g., `vite.config.ts`, `webpack.config.js`, `.env` files) like incorrect paths, typos, or invalid settings.
+- **Proxy Issues:** Incorrectly configured server proxies (like the one used here to connect frontend to backend) can prevent API calls from working.
+- **Database Connection Problems:** The application cannot connect to the required database (wrong credentials, database server not running).
+- **Node.js/npm Version Issues:** Using an incompatible version of Node.js or npm for the project.
+
+**How to Find Them:**
+- **Terminal Output:** Carefully read the output in the terminal where you started the development server (`npm run dev`). Errors related to ports, missing modules, or configuration issues often appear here.
+- **Browser Developer Console:** Check the Console and Network tabs.
+    - Console might show connection errors or JavaScript errors related to failed resource loading.
+    - Network tab will show failed requests (e.g., 404 Not Found for assets, connection refused errors).
+- **Configuration Files:** Double-check relevant configuration files (`vite.config.ts`, `package.json`, etc.) for typos or incorrect settings.
+- **Dependency Checks:** Run `npm list` or check `package-lock.json`/`yarn.lock` for potential version conflicts.
+
+**Debugging Strategy:**
+1.  **Check Terminal Output:** Look for any error messages when starting the dev server.
+2.  **Check Browser Console/Network:** See if the browser can connect and load initial files. Note any specific errors (e.g., "Connection Refused", 404 errors).
+3.  **Verify URLs and Ports:** Ensure the URL you're using in the browser matches the port the server *says* it's running on in the terminal output. Check configuration files (`vite.config.ts`) for explicit port settings.
+4.  **Check Dependencies:** Run `npm install` again to ensure all dependencies are present.
+5.  **Review Configuration:** Carefully examine configuration files related to the suspected issue (e.g., server config, proxy config).
+6.  **Simplify:** Temporarily comment out complex configurations (like proxies) to see if the basic server starts correctly.
+
+</details>
+
 ---
 
 # Jargon Buster
