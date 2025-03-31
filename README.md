@@ -20,6 +20,7 @@ This repository contains several branches, each with a specific bug for you to f
 - `challenge/logical-error-filter`: The search filter doesn't behave as expected.
 - `challenge/logical-error-add`: Adding new terms doesn't update the list correctly.
 - `challenge/dev-env-error`: A configuration issue prevents the development server from working properly.
+- `challenge/server-error-add`: Adding a new term fails due to a server-side database error.
 
 **Instructions for Students:**
 
