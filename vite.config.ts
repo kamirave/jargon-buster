@@ -11,6 +11,8 @@ export default defineConfig({
     emptyOutDir: true
   },
   server: {
+    // Dev Env Error: Changed the default port
+    port: 5174,
     proxy: {
       '/api': {
         target: 'http://localhost:3000',

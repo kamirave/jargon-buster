@@ -1,3 +1,9 @@
+## Challenge Clue: Development Environment Error
+
+The application fails to load in the browser, even though `npm run dev` seems to start without syntax errors. Check the network tab in your browser's developer tools. Is the browser trying to connect to the correct address and port? Review the `vite.config.ts` file for any server configuration issues.
+
+---
+
 # Jargon Buster
 
 ## Installation
