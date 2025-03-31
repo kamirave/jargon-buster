@@ -2,6 +2,38 @@
 
 Searching for terms doesn't seem to work correctly. Even when you type a known term, it might not appear in the results, or unrelated terms might show up. Examine the filtering logic in `TermList.tsx`. Is it comparing the right things? Is case sensitivity handled correctly?
 
+<details>
+<summary>Learn more about Logical Errors</summary>
+
+A **Logical Error** is a bug where the code runs without crashing (no syntax or runtime errors), but it produces incorrect or unexpected results. These are often the hardest errors to find because the computer is doing exactly what you *told* it to do, just not what you *intended* it to do.
+
+**Common Causes:**
+- **Incorrect Algorithm/Formula:** The underlying logic used to solve the problem is flawed.
+- **Flawed Conditional Logic:** `if`/`else if`/`else` statements are structured incorrectly, leading to the wrong code path being executed.
+- **Off-by-One Errors:** Loops iterate one time too many or too few (e.g., using `<` instead of `<=`).
+- **Incorrect Operator Usage:** Using the wrong operator (e.g., `+` instead of `-`, `&&` instead of `||`, `=` instead of `===`).
+- **Misunderstanding Requirements:** The code correctly implements the wrong logic because the programmer misunderstood the goal.
+- **State Management Issues:** In UI frameworks like React, incorrectly updating or reading component state can lead to unexpected UI behavior.
+- **Case Sensitivity:** Incorrectly handling uppercase vs. lowercase characters in comparisons or searches.
+
+**How to Find Them:**
+- **Testing:** Writing and running tests (unit tests, integration tests) that check for specific expected outputs given certain inputs.
+- **Debugging Tools (`console.log`, Debugger):** This is crucial.
+    - Print variable values at different stages of the logic (`console.log("Variable X:", x)`).
+    - Use a debugger to step through the code line by line, inspecting variable values and the execution flow.
+- **Code Review:** Having another person look at your code can often spot flawed logic you missed.
+- **Rubber Duck Debugging:** Explaining your code, line by line, to someone (or even an inanimate object like a rubber duck) can force you to see the flaw in your logic.
+- **Simplification:** Temporarily remove or simplify parts of the code to isolate the section containing the logical error.
+
+**Debugging Strategy:**
+1.  **Reproduce Consistently:** Find inputs or actions that reliably trigger the incorrect behavior.
+2.  **Formulate a Hypothesis:** Based on the incorrect output, guess where the logic might be going wrong.
+3.  **Test Hypothesis:** Use `console.log` or the debugger to check the values of relevant variables *before* and *after* the suspected faulty code section.
+4.  **Analyze Results:** Do the variable values match your expectations? If not, you've likely found the area with the error.
+5.  **Refine and Repeat:** If your initial hypothesis was wrong, form a new one based on your observations and repeat the testing process. Focus on understanding the *flow* of data and control through your code.
+
+</details>
+
 ---
 
 # Jargon Buster
