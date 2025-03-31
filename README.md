@@ -1,3 +1,9 @@
+## Challenge Clue: Runtime Reference Error
+
+Searching for terms causes the application to crash with a `ReferenceError`. Check the `SearchTerms` component. Is a variable being used that hasn't been properly defined or is misspelled?
+
+---
+
 # Jargon Buster
 
 ## Installation
