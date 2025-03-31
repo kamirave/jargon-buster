@@ -1,3 +1,9 @@
+## Challenge Clue: Runtime Type Error
+
+The application loads initially, but crashes when trying to display the list of terms. The console likely shows a `TypeError`. Investigate how term data is accessed within the `TermList` component. Is it possible some data is missing or has an unexpected structure?
+
+---
+
 # Jargon Buster
 
 ## Installation
