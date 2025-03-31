@@ -8,6 +8,60 @@ npm install
 npm run dev
 ```
 
+## Debugging Challenges
+
+This repository contains several branches, each with a specific bug for you to find and fix.
+
+**Challenge Branches:**
+
+- `challenge/syntax-error`: A syntax mistake prevents the app from starting.
+- `challenge/runtime-type-error`: Accessing data incorrectly causes a `TypeError`.
+- `challenge/runtime-reference-error`: Using an undefined variable causes a `ReferenceError`.
+- `challenge/logical-error-filter`: The search filter doesn't behave as expected.
+- `challenge/logical-error-add`: Adding new terms doesn't update the list correctly.
+- `challenge/dev-env-error`: A configuration issue prevents the development server from working properly.
+
+**Instructions for Students:**
+
+1.  **Fork this Repository:** Create your own copy of this repository on GitHub.
+2.  **Clone Your Fork:** Clone your forked repository to your local machine.
+    ```bash
+    git clone <your-fork-repository-url>
+    cd jargon-buster
+    ```
+3.  **Add Upstream Remote:** Add the original repository (this one) as a remote named `upstream`. This allows you to fetch the challenge branches.
+    ```bash
+    # Replace <original-repo-url> with the URL of this repository
+    git remote add upstream <original-repo-url>
+    ```
+4.  **Fetch Upstream Branches:** Get all the branches from the original repository.
+    ```bash
+    git fetch upstream
+    ```
+5.  **List All Branches:** You can see all local and remote branches (including the upstream challenges) using:
+    ```bash
+    git branch -a
+    ```
+6.  **Checkout a Challenge Branch:** Choose a challenge branch and check it out locally. This command creates a local branch that tracks the upstream challenge branch. Replace `<challenge-name>` with the specific challenge (e.g., `challenge/syntax-error`).
+    ```bash
+    git checkout -b <challenge-name> upstream/<challenge-name>
+    ```
+    *Example:*
+    ```bash
+    git checkout -b challenge/syntax-error upstream/challenge/syntax-error
+    ```
+7.  **Solve the Challenge:** Run `npm install` if needed, then `npm run dev`. Find the bug using the clue in this branch's `README.md` and fix it.
+8.  **Commit Your Solution:** Stage and commit your fix.
+    ```bash
+    git add .
+    git commit -m "fix: solved <challenge-name> challenge"
+    ```
+9.  **Push to Your Fork (Origin):** Push your local challenge branch (with your solution) to your own fork on GitHub (named `origin` by default).
+    ```bash
+    git push origin <challenge-name>
+    ```
+10. **Repeat:** To try another challenge, switch back to your main branch (`git checkout main`), and repeat from step 6 with a different `<challenge-name>`.
+
 A simpleweb application for tracking and learning new technical terms, jargon, and concepts. Built with React, TypeScript, and Express, it helps you manage your learning journey by capturing initial thoughts, detailed notes, and simplified explanations.
 
 ## Features
