@@ -1,3 +1,9 @@
+## Challenge Clue: Logical Error (Filter)
+
+Searching for terms doesn't seem to work correctly. Even when you type a known term, it might not appear in the results, or unrelated terms might show up. Examine the filtering logic in `TermList.tsx`. Is it comparing the right things? Is case sensitivity handled correctly?
+
+---
+
 # Jargon Buster
 
 ## Installation
