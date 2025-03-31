@@ -1,3 +1,9 @@
+## Challenge Clue: Logical Error (Add)
+
+Adding a new term seems to succeed (no errors), but the term doesn't appear in the list immediately. You might need to refresh the page to see it. Check how the new term is added to the state in `TermContext.tsx` and how the list is updated afterwards. Is the local state being updated correctly after the API call?
+
+---
+
 # Jargon Buster
 
 ## Installation
