@@ -2,6 +2,37 @@
 
 The application loads initially, but crashes when trying to display the list of terms. The console likely shows a `TypeError`. Investigate how term data is accessed within the `TermList` component. Is it possible some data is missing or has an unexpected structure?
 
+<details>
+<summary>Learn more about Runtime TypeErrors</summary>
+
+A **TypeError** is a common runtime error in JavaScript (and TypeScript) that occurs when you try to perform an operation on a value of an inappropriate type. The most frequent cause is trying to access a property or call a method on `undefined` or `null`.
+
+**Common Causes:**
+- Accessing a property of `undefined` or `null` (e.g., `myObject.property` when `myObject` is `undefined`).
+- Calling something that is not a function (e.g., `myVariable()` when `myVariable` is a number or string).
+- Using operators with incompatible types (though JavaScript often tries type coercion first).
+- Incorrect assumptions about data structure (e.g., expecting an object but receiving an array or primitive).
+- Asynchronous operations not completing before their results are used.
+
+**How to Find Them:**
+- **Browser Developer Console:** This is your primary tool. When a `TypeError` occurs, the console will display:
+    - The error message (e.g., "TypeError: Cannot read properties of undefined (reading 'name')").
+    - A stack trace showing the sequence of function calls leading to the error.
+    - The file name and line number where the error originated.
+- **Debugging Tools:** Using `console.log()` or the debugger (`debugger;` statement or IDE debugger) to inspect variable values just before the error occurs.
+
+**Debugging Strategy:**
+1.  Read the error message carefully. It often tells you *which property* couldn't be read and *what* it couldn't be read from (usually `undefined` or `null`).
+2.  Use the stack trace to find the exact line of code causing the error.
+3.  Examine that line. Identify the variable that is likely `undefined` or `null`.
+4.  Trace back where that variable gets its value. Why might it be `undefined` or `null` at that point?
+    - Was data fetched correctly?
+    - Was a function argument missing?
+    - Is there a conditional logic path where the variable isn't assigned?
+5.  Add checks (`if (variable) { ... }`) or provide default values (`variable?.property` or `variable || defaultValue`) to handle cases where the value might be missing.
+
+</details>
+
 ---
 
 # Jargon Buster
