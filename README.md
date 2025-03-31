@@ -32,7 +32,7 @@ This repository contains several branches, each with a specific bug for you to f
 3.  **Add Upstream Remote:** Add the original repository (this one) as a remote named `upstream`. This allows you to fetch the challenge branches.
     ```bash
     # Replace <original-repo-url> with the URL of this repository
-    git remote add upstream <original-repo-url>
+    git remote add upstream https://github.com/codeWithJV/jargon-buster
     ```
 4.  **Fetch Upstream Branches:** Get all the branches from the original repository.
     ```bash
