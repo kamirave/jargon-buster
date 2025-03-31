@@ -2,6 +2,30 @@
 
 The application fails to start. Check the browser's developer console or the terminal where you ran `npm run dev` for clues about a syntax mistake. Look closely at the structure of the `AddTermForm` component.
 
+<details>
+<summary>Learn more about Syntax Errors</summary>
+
+A **Syntax Error** occurs when your code violates the grammatical rules of the programming language. The computer cannot understand or parse code that doesn't follow the correct syntax.
+
+**Common Causes:**
+- Typos (misspelled keywords, variable names)
+- Missing or mismatched punctuation (parentheses `()`, braces `{}`, brackets `[]`, semicolons `;`, commas `,`)
+- Incorrect use of operators (`=`, `==`, `===`, `+`, `-`, etc.)
+- Improper code structure (e.g., incorrect indentation in Python, misplaced keywords)
+
+**How to Find Them:**
+- **Linters & IDEs:** Tools like ESLint (for JavaScript/TypeScript) and your code editor (like VS Code) often highlight syntax errors as you type. Pay attention to red squiggly lines!
+- **Compiler/Interpreter Output:** When you try to run or build your code (`npm run dev`, `tsc`, `node script.js`), the error message will usually point directly to the file and line number where the syntax violation occurred. The message might say something like "Unexpected token", "Missing ;", or "Unterminated string constant".
+
+**Debugging Strategy:**
+1.  Read the error message carefully. It often tells you exactly what's wrong and where.
+2.  Go to the specified file and line number.
+3.  Examine the line and the lines immediately before and after it.
+4.  Look for common causes like missing punctuation or typos.
+5.  If unsure, comment out sections of code to isolate the problematic line.
+
+</details>
+
 ---
 
 # Jargon Buster
