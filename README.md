@@ -1,3 +1,9 @@
+## Challenge Clue: Syntax Error
+
+The application fails to start. Check the browser's developer console or the terminal where you ran `npm run dev` for clues about a syntax mistake. Look closely at the structure of the `AddTermForm` component.
+
+---
+
 # Jargon Buster
 
 ## Installation
@@ -7,6 +13,17 @@ Clone the repository and install the dependencies:
 npm install
 npm run dev
 ```
+
+## Debugging Challenges
+
+Test your debugging skills! Each of the following branches contains a specific bug. Check out a branch and try to fix it using the clues in its `README.md`.
+
+- `challenge/syntax-error`: A syntax mistake prevents the app from starting.
+- `challenge/runtime-type-error`: Accessing data incorrectly causes a `TypeError`.
+- `challenge/runtime-reference-error`: Using an undefined variable causes a `ReferenceError`.
+- `challenge/logical-error-filter`: The search filter doesn't behave as expected.
+- `challenge/logical-error-add`: Adding new terms doesn't update the list correctly.
+- `challenge/dev-env-error`: A configuration issue prevents the development server from working properly.
 
 A simpleweb application for tracking and learning new technical terms, jargon, and concepts. Built with React, TypeScript, and Express, it helps you manage your learning journey by capturing initial thoughts, detailed notes, and simplified explanations.
 
