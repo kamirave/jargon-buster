@@ -172,6 +172,8 @@ git checkout -b challenge/logical-error-filter upstream/challenge/logical-error-
 ```
 **Reproduce:** Run `npm run dev`, try searching for terms. Filter doesn't work as expected.
 
+**TIP:** try putting capital letters in your terms or search.
+
 **Details:** Searching for terms doesn't seem to work correctly. Even when you type a known term, it might not appear in the results, or unrelated terms might show up. Examine the filtering logic in `TermList.tsx`. Is it comparing the right things? Is case sensitivity handled correctly?
 
 <details>
