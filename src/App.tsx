@@ -8,7 +8,7 @@ import { SearchTerms } from './components/SearchTerms';
 function App() {
   const [activeTab, setActiveTab] = useState<'add' | 'search'>('add');
   const [searchQuery, setSearchQuery] = useState('');
-  const [filter, setFilter] = useState<'understood' | 'notUnderstood'>('understood');
+  const [filter, setFilter] = useState<'understood' | 'notUnderstood'>('notUnderstood');
 
   return (
     <TermProvider>
