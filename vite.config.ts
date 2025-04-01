@@ -11,11 +11,11 @@ export default defineConfig({
     emptyOutDir: true
   },
   server: {
-    // Dev Env Error: Changed the default port
-    port: 5174,
+    port: 5173,
     proxy: {
       '/api': {
-        target: 'http://localhost:3000',
+        // Dev Env Error: Changed the default port
+        target: 'http://localhost:3001',
         changeOrigin: true,
       },
     },
