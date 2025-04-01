@@ -39,13 +39,14 @@ This repository contains several branches, each with a specific bug for you to f
 ### Challenge Table of Contents
 
 1.  **[Syntax Error (`challenge/syntax-error`)](#1-syntax-error)**
-2.  **[Runtime Type Error (`challenge/runtime-type-error`)](#2-runtime-type-error)**
-3.  **[Runtime Reference Error (`challenge/runtime-reference-error`)](#3-runtime-reference-error)**
-4.  **Logical Errors**
-    *   4a. **[Filter (`challenge/logical-error-filter`)](#4a-logical-error---filter)**
-    *   4b. **[Add (`challenge/logical-error-add`)](#4b-logical-error---add)**
-5.  **[Development Environment Error (`challenge/dev-env-error`)](#5-development-environment-error)**
-6.  **[Server-Side Error - Add Term (`challenge/server-error-add`)](#6-server-side-error---add-term)**
+2.  **Runtime Errors**
+    *   2a. **[Type Error (`challenge/runtime-type-error`)](#2a-runtime-type-error)**
+    *   2b. **[Reference Error (`challenge/runtime-reference-error`)](#2b-runtime-reference-error)**
+3.  **Logical Errors**
+    *   3a. **[Filter (`challenge/logical-error-filter`)](#3a-logical-error---filter)**
+    *   3b. **[Add (`challenge/logical-error-add`)](#3b-logical-error---add)**
+4.  **[Development Environment Error (`challenge/dev-env-error`)](#4-development-environment-error)**
+5.  **[Server-Side Error - Add Term (`challenge/server-error-add`)](#5-server-side-error---add-term)**
 
 ---
 
@@ -86,7 +87,9 @@ A **Syntax Error** occurs when your code violates the grammatical rules of the p
 
 ---
 
-## 2. Runtime Type Error
+## 2. Runtime Errors
+
+### 2a. Runtime Type Error
 #### `challenge/runtime-type-error`
 ```bash
 git checkout -b challenge/runtime-type-error upstream/challenge/runtime-type-error
@@ -128,7 +131,7 @@ A **TypeError** is a common runtime error in JavaScript (and TypeScript) that oc
 
 ---
 
-## 3. Runtime Reference Error
+### 2b. Runtime Reference Error
 #### `challenge/runtime-reference-error`
 ```bash
 git checkout -b challenge/runtime-reference-error upstream/challenge/runtime-reference-error
@@ -160,9 +163,9 @@ A **ReferenceError** is a runtime error in JavaScript that occurs when you try t
 
 ---
 
-## 4. Logical Errors
+## 3. Logical Errors
 
-### 4a. Logical Error - Filter
+### 3a. Logical Error - Filter
 #### `challenge/logical-error-filter`
 ```bash
 git checkout -b challenge/logical-error-filter upstream/challenge/logical-error-filter
@@ -205,7 +208,7 @@ A **Logical Error** is a bug where the code runs without crashing (no syntax or 
 
 ---
 
-### 4b. Logical Error - Add
+### 3b. Logical Error - Add
 #### `challenge/logical-error-add`
 ```bash
 git checkout -b challenge/logical-error-add upstream/challenge/logical-error-add
@@ -214,11 +217,11 @@ git checkout -b challenge/logical-error-add upstream/challenge/logical-error-add
 
 **Details:** Adding a new term seems to succeed (no errors), but the term doesn't appear in the list immediately. You might need to refresh the page to see it. Check how the new term is added to the state in `TermContext.tsx` and how the list is updated afterwards. Is the local state being updated correctly after the API call?
 
-*(See shared "Learn more about Logical Errors" details under challenge 4a)*
+*(See shared "Learn more about Logical Errors" details under challenge 3a)*
 
 ---
 
-## 5. Development Environment Error
+## 4. Development Environment Error
 #### `challenge/dev-env-error`
 ```bash
 git checkout -b challenge/dev-env-error upstream/challenge/dev-env-error
@@ -261,7 +264,7 @@ git checkout -b challenge/dev-env-error upstream/challenge/dev-env-error
 
 ---
 
-## 6. Server-Side Error - Add Term
+## 5. Server-Side Error - Add Term
 #### `challenge/server-error-add`
 ```bash
 git checkout -b challenge/server-error-add upstream/challenge/server-error-add
