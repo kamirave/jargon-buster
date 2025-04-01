@@ -2,6 +2,11 @@
 
 The application loads initially, but crashes when trying to display the list of terms. The console likely shows a `TypeError`. Investigate how term data is accessed within the `TermList` component. Is it possible some data is missing or has an unexpected structure?
 
+**Note on reproducing the error:**
+*   The error occurs when the application tries to render *any* term in the list.
+*   If you start with an empty database, you'll need to add a term first (e.g., "API").
+*   By default, new terms are "Not Understood". If the "Understood" filter is active, you might need to click the "Not Understood" filter button to make the newly added term visible, which will then trigger the error. Once a term is visible in the list (regardless of the filter), the `TypeError` should occur.
+
 <details>
 <summary>Learn more about Runtime TypeErrors</summary>
 
