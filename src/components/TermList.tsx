@@ -45,9 +45,18 @@ export function TermList({ searchQuery, filter }: TermListProps) {
     }
   };
 
-  const filteredTerms = terms.filter(term =>
-    filter === 'understood' ? term.understood : !term.understood
-  );
+  const filteredTerms = terms
+    .filter(term => filter === 'understood' ? term.understood : !term.understood)
+    .filter(term => {
+      const query = searchQuery ? searchQuery.toLowerCase() : ''; // Handle undefined searchQuery
+      if (!query) return true; // Show all if search query is empty
+      return (
+        term.term.toLowerCase().includes(query) ||
+        (term.definition && term.definition.toLowerCase().includes(query)) ||
+        (term.notes && term.notes.toLowerCase().includes(query)) ||
+        (term.eli5 && term.eli5.toLowerCase().includes(query))
+      );
+    });
 
   return (
     <div className="space-y-4">

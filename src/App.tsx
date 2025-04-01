@@ -71,7 +71,7 @@ function App() {
               Not Understood
             </button>
           </div>
-          <TermList filter={filter} />
+          <TermList filter={filter} searchQuery={searchQuery} />
         </main>
       </div>
     </TermProvider>
