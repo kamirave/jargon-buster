@@ -115,6 +115,22 @@ app.delete('/api/terms/:id', async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
+// Mark all terms as understood
+app.put('/api/terms/mark-all-understood', async (req, res) => {
+  try {
+    const now = new Date().toISOString();
+    await run(
+      `UPDATE terms SET understood = ?, dateUnderstood = ?`,
+      [1, now]
+
+    );
+    res.json({ success: true });
+  } catch (error) {
+    console.error('💥 SQL ERROR:', error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
 
 // Serve index.html for all other routes (SPA support)
 app.get('*', (req, res) => {
