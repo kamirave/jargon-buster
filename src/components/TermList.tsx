@@ -72,19 +72,20 @@ useEffect(() => {
   const handleMarkAllAsUnderstood = async () => {
     try {
       const response = await fetch('/api/terms/mark-all-understood', {
+        headers: {
+          'Content-Type': 'application/json'
+        },
         method: 'PUT',
       });
   
       const result = await response.json();
-  
       if (result.success) {
-        console.log('✅ All terms marked as understood!');
-        await fetchTerms(); // ✅ reloads updated terms
+                await fetchTerms(); // ✅ reloads updated terms
       } else {
-        console.error('⚠️ Something went wrong marking all terms.');
+        
       }
     } catch (error) {
-      console.error('❌ Error calling API:', error);
+      
     }
   };
   

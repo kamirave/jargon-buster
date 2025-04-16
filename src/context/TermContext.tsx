@@ -12,8 +12,7 @@ export function TermProvider({ children }: { children: React.ReactNode }) {
     try {
       const response = await fetch(`${API_URL}/terms`);
       const data = await response.json() as Term[];
-      console.log('🎯 Terms fetched from DB:', data); // ← Add this
-       // 🔁 Force a *new* array with new references for React to detect changes
+     // 🔁 Force a *new* array with new references for React to detect changes
        setTerms(data.map(term => ({ ...term })));
     } catch (error) {
       console.error('Error fetching terms:', error);

@@ -57,6 +57,7 @@ db.serialize(() => {
 // Get all terms
 app.get('/api/terms', async (req, res) => {
   try {
+    console.log('2🎯 Getting all terms');
     const terms = await all('SELECT * FROM terms');
     res.json(terms);
   } catch (error) {
@@ -78,6 +79,24 @@ app.post('/api/terms', async (req, res) => {
   }
 });
 
+// Mark all terms as understood
+app.put('/api/terms/mark-all-understood', async (req, res) => {
+    try {
+    const now = new Date().toISOString();
+    
+    
+    const result = await run(
+      `UPDATE terms SET understood = ?, dateUnderstood = ? returning *`,
+      [1, now]
+    );
+      
+    res.json({ success: true, result: result.rows });
+  } catch (error) {
+    
+    res.status(500).json({ error: error.message });
+  }
+});
+
 // Update a term
 app.put('/api/terms/:id', async (req, res) => {
   try {
@@ -95,6 +114,7 @@ app.put('/api/terms/:id', async (req, res) => {
 // Toggle understood status
 app.put('/api/terms/:id/toggle', async (req, res) => {
   try {
+    
     const { understood, dateUnderstood } = req.body;
     await run(
       'UPDATE terms SET understood = ?, dateUnderstood = ? WHERE id = ?',
@@ -115,22 +135,6 @@ app.delete('/api/terms/:id', async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
-// Mark all terms as understood
-app.put('/api/terms/mark-all-understood', async (req, res) => {
-  try {
-    const now = new Date().toISOString();
-    await run(
-      `UPDATE terms SET understood = ?, dateUnderstood = ?`,
-      [1, now]
-
-    );
-    res.json({ success: true });
-  } catch (error) {
-    console.error('💥 SQL ERROR:', error);
-    res.status(500).json({ error: error.message });
-  }
-});
-
 
 // Serve index.html for all other routes (SPA support)
 app.get('*', (req, res) => {
