@@ -57,7 +57,6 @@ db.serialize(() => {
 // Get all terms
 app.get('/api/terms', async (req, res) => {
   try {
-    console.log('2🎯 Getting all terms');
     const terms = await all('SELECT * FROM terms');
     res.json(terms);
   } catch (error) {
